@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mt-5">
+        <div class="h3">Example form</div>
+        <form method="post" enctype="multipart/form-data" action="/feedback/" class="ajax-form">
+          <div class="form-error d-none">Ошибка в форме</div>
+          <div class="form-result-success d-none">Форма отправлена</div>
+          <input type="hidden" name="form-id" value="feedback">
+          <div class="mb-3">
+            <label for="from-name" class="form-label">Name</label>
+            <input name="name" type="text" class="form-control" id="from-name" aria-describedby="nameHelp">
+            <div id="nameHelp" class="form-text invalid-feedback">We'll never share your name with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="from-Email" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="from-Email" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text invalid-feedback">We'll never share your email with anyone else.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="from-Email" class="form-label">Phone</label>
+            <input name="phone" type="tel" class="form-control" id="from-phone" aria-describedby="phoneHelp">
+            <div id="phoneHelp" class="form-text invalid-feedback">We'll never share your email with anyone else.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="from-message" class="form-label">Message</label>
+            <textarea name="message" class="form-control" id="from-message" aria-describedby="messageHelp"></textarea>
+            <div id="messageHelp" class="form-text invalid-feedback">We'll never share your email with anyone else.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Прикрепите файл</label>
+            <input class="form-control" name="uploaded_file" multiple type="file" id="formFile">
+            <div id="" class="form-text invalid-feedback">We'll never share your email with anyone else.</div>
+          </div>
+
+          <div class="mb-3 captcha">
+            <img class="img-captcha" src="/feedback/captcha/captcha.php" data-src="/feedback/captcha/captcha.php">
+            <div class="btn btn-light position-relative refresh-captcha">Обновить</div>
+            <div class="form-group">
+              <label for="captcha" class="control-label">Код, показанный на изображении</label>
+              <input type="text" name="captcha" maxlength="6" required="required" id="captcha"
+                class="form-control captcha" placeholder="******" autocomplete="off" value="">
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input name="agree" type="checkbox" class="form-check-input" id="exampleCheck">
+            <label class="form-check-label" for="exampleCheck">Нажимая кнопку, я принимаю условия Пользовательского
+              соглашения и даю своё согласие на обработку моих персональных
+              данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных».</label>
+          </div>
+          <button disabled type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+    </div>
+
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/js/feedback.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

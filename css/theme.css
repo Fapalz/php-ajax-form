@@ -1,0 +1,11 @@
+.form-error {
+  padding: 10px;
+  color: red;
+  border: 1px solid #eee;
+}
+
+.form-result-success {
+  padding: 10;
+  color: green;
+  border: 1px solid #eee;
+}
